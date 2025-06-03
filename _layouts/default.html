@@ -16,26 +16,50 @@
         }
 
         header {
-            background-color: #4CAF50;
-            color: white;
+            text-align: center;
             padding: 20px;
-            text-align: center;
+            background-color: #e6f7ff; /* 使用浅蓝色背景 */
+            color: #333;
+            border-bottom: 1px solid #ddd; /* 添加底部边框 */
         }
 
-        nav {
-            text-align: center;
-            margin: 20px 0;
+        .about-container {
+            display: flex; /* 使用 flexbox 布局 */
+            align-items: flex-start; /* 垂直顶部对齐 */
+            gap: 20px; /* 左右内容之间的间距 */
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
-        nav a {
-            margin: 0 15px;
+        .about-container img {
+            width: 150px; /* 图片宽度 */
+            height: 150px; /* 图片高度 */
+            border-radius: 50%; /* 圆形图片 */
+            object-fit: cover; /* 图片裁剪适应容器 */
+        }
+
+        .about-container .description {
+            flex: 1; /* 让简介占据剩余空间 */
+        }
+
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* 图标之间的间距 */
+            margin-top: 10px;
+        }
+
+        .contact-icons a {
             text-decoration: none;
-            color: #4CAF50;
-            font-weight: bold;
         }
 
-        nav a:hover {
-            text-decoration: underline;
+        .contact-icons img {
+            width: 30px; /* 图标大小 */
+            height: 30px;
         }
 
         section {
@@ -47,55 +71,182 @@
             border-radius: 8px;
         }
 
+        .project-container {
+            display: flex; /* 使用 flexbox 布局 */
+            align-items: center; /* 垂直顶部对齐 */
+            gap: 20px; /* 左右内容之间的间距 */
+            margin: 20px 0;
+            padding: 20px;
+            background: #f9f9f9; /* 项目框背景颜色 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .project-container img {
+            width: 500px; /* 项目图片宽度 */
+            max-height: 200px; /* 项目图片高度 */
+            object-fit: cover; /* 图片裁剪适应容器 */
+            border-radius: 1px; /* 图片圆角 */
+        }
+
+        .project-container .project-description {
+            flex: 1; /* 让项目描述占据剩余空间 */
+        }
+
         footer {
             text-align: center;
             padding: 10px;
-            background-color: #4CAF50;
-            color: white;
+            background-color: #e6f7ff; /* 使用浅蓝色背景 */
+            color: #333;
             position: fixed;
             bottom: 0;
             width: 100%;
+        }
+        #work-experiences {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        #work-experiences h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .experience-container {
+            display: flex; /* 使用 flexbox 布局 */
+            align-items: flex-start; /* 垂直顶部对齐 */
+            gap: 20px; /* 左右内容之间的间距 */
+            margin-bottom: 20px; /* 每个工作经历之间的间距 */
+            padding: 10px;
+            background: #f9f9f9; /* 背景颜色 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .experience-container img {
+            width: 60px; /* 公司 logo 宽度 */
+            height: 60px; /* 公司 logo 高度 */
+            object-fit: contain; /* 保持 logo 比例 */
+            border-radius: 8px; /* logo 圆角 */
+        }
+
+        .experience-details {
+            flex: 1; /* 让详情占据剩余空间 */
+        }
+
+        .experience-details h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .experience-details p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .experience-details p strong {
+            color: #333;
         }
     </style>
 </head>
 <body>
     <!-- 头部 -->
     <header>
-        <h1>欢迎来到我的个人主页</h1>
-        <p>你好，我是 Ryan</p>
+        <h1>Jinke Li (李金珂/Ryan Li)</h1>
+        <!-- 联系方式 -->
+        <div class="contact-icons">
+            <a href="mailto:ryanli24@outlook.com" target="_blank">
+                <img src="assets/icon/email-mail-svgrepo-com.svg" alt="Email">
+            </a>
+            <a href="https://github.com/jinkeli24ryan" target="_blank">
+                <img src="assets/icon/github-mark.svg" alt="GitHub">
+            </a>
+            <a href="https://www.instagram.com/ryan_li24?igsh=MnhkMm0ybGRxaXJk&utm_source=qr" target="_blank">
+                <img src="assets/icon/instagram-svgrepo-com.svg" alt="Instagram">
+            </a>
+            <a href="assets/icons/wechat-qr.png" target="_blank">
+                <img src="assets/icon/wechat-svgrepo-com.svg" alt="WeChat">
+            </a>
+            <a href="https://huggingface.co/lili24" target="_blank">
+                <img src="assets/icon/hf-logo.svg" alt="Huggingface">
+            </a>
+        </div>
     </header>
 
-    <!-- 导航栏 -->
-    <nav>
-        <a href="#about">关于我</a>
-        <a href="#projects">项目</a>
-        <a href="#contact">联系我</a>
-    </nav>
-
-    <!-- 内容部分 -->
-    <section id="about">
-        <h2>关于我</h2>
-        <p>我是一个热爱编程和技术的开发者，喜欢学习新知识并解决问题。</p>
-        <p>技能：HTML、CSS、JavaScript、Python 等。</p>
+    <!-- 个人简介 -->
+    <section class="about-container">
+        <!-- 左侧图片 -->
+        <img src="assets/image/self.jpg" alt="My Photo">
+        <!-- 右侧描述 -->
+        <div class="description">
+            <p>Hello! My name is Jinke Li (李金珂/Ryan Li). I'm a second year Master student majored in Artificial Intelligence at <a href="https://github.com/rvclab/rvclab.github.io" target="_blank">RVCLab</a> of Zhejiang University. My professor is <a href="https://person.zju.edu.cn/ylj" target="_blank">Liangjing Yang</a> from Singapore. I'm a GYM addicted ENTJ guy with interests of different cultures of the world! In relationship with a Thai Girl RN, and we have our small world. Feel free to contact me and be a friend of mine!</p>
+        </div>
     </section>
 
+    <!-- 项目部分 -->
     <section id="projects">
-        <h2>我的项目</h2>
-        <ul>
-            <li><a href="https://github.com/jinkeli24ryan" target="_blank">GitHub 仓库</a></li>
-            <li><a href="#" target="_blank">个人博客</a></li>
-        </ul>
+        <h2>Projects</h2>
+        <!-- 项目 1 -->
+        <div class="project-container">
+            <img src="assets/image/mm.png" alt="Project 1">
+            <div class="project-description">
+                <h4>UniSVG: A Unified Dataset for Vector Graphic Understanding and Generation with Multimodal Large Language Models</h3>
+                <p>Project Link: <a href="https://ryanlijinke.github.io/" target="_blank">Visit Project</a></p>
+            </div>
+        </div>
+        <!-- 项目 2 -->
+        <div class="project-container">
+            <img src="assets/image/ICIC.png" alt="Project 2">
+            <div class="project-description">
+                <h4>Two-Stage Multi-Stained Cell Analysis with the Segment Anything Model for Pathological Image Segmentation (ICIC 2025 (CCF-C) Oral! )</h4>
+            </div>
+        </div>
     </section>
 
-    <section id="contact">
-        <h2>联系我</h2>
-        <p>邮箱：<a href="mailto:ryanli24@outlook.com">ryanli24@outlook.com</a></p>
-        <p>社交媒体：<a href="https://twitter.com" target="_blank">Twitter</a></p>
+    <section id="work-experiences">
+        <h2>Work Experiences</h2>
+        <!-- 工作经历 1 -->
+        <div class="experience-container">
+            <img src="assets/icon/XiaohongshuLOGO.svg" alt="Company Logo">
+            <div class="experience-details">
+                <h3>AI Techinology Strategy Intern</h3>
+                <p><strong>Company:</strong>Xiaohongshu</p>
+                <p><strong>Time:</strong> May 2025 - Now</p>
+                <p><strong>Responsibilities:</strong> Developed and optimized web applications using React and Node.js. Collaborated with cross-functional teams to deliver high-quality software solutions.</p>
+            </div>
+        </div>
+
+        <!-- 工作经历 2 -->
+        <div class="experience-container">
+            <img src="assets/icon/Tencent_Logo.svg" alt="Company Logo">
+            <div class="experience-details">
+                <h3>LLM Application Research Intern</h3>
+                <p><strong>Company:</strong>Tencent</p>
+                <p><strong>Time:</strong> June 2024 - June 2025</p>
+                <p><strong>Responsibilities:</strong> Conducted research on deep learning models for natural language processing. Published papers and contributed to open-source AI projects.</p>
+            </div>
+        </div>
+
+        <!-- 工作经历 3 -->
+        <div class="experience-container">
+            <img src="assets/icon/shlab.png" alt="Company Logo">
+            <div class="experience-details">
+                <h3>Intern Researcher in Artificial Intelligence and Smart Healthcare </h3>
+                <p><strong>Company:</strong>Shanghai Artificial Intelligence Laboratory</p>
+                <p><strong>Time:</strong> July 2023- September 2023</p>
+                <p><strong>Responsibilities:</strong> Analyzed large datasets to identify trends and insights. Created dashboards and reports to support business decision-making.</p>
+            </div>
+        </div>
     </section>
 
     <!-- 页脚 -->
     <footer>
-        <p>&copy; 2023 Ryan. 保留所有权利。</p>
+        <p>&copy; 2023 Ryan Li. All rights reserved.</p>
     </footer>
 </body>
 </html>
