@@ -152,6 +152,37 @@
         .experience-details p strong {
             color: #333;
         }
+        #wechat-popup {
+            display: none; /* 初始隐藏 */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+        }
+
+        #wechat-popup img {
+            width: 200px; /* 图片宽度 */
+            height: auto; /* 保持图片比例 */
+        }
+
+        #wechat-popup .close-btn {
+            display: block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #wechat-popup .close-btn:hover {
+            background: #d32f2f;
+        }
     </style>
 </head>
 <body>
@@ -169,9 +200,30 @@
             <a href="https://www.instagram.com/ryan_li24?igsh=MnhkMm0ybGRxaXJk&utm_source=qr" target="_blank">
                 <img src="assets/icon/instagram-svgrepo-com.svg" alt="Instagram">
             </a>
-            <a href="assets/icons/wechat-qr.png" target="_blank">
-                <img src="assets/icon/wechat-svgrepo-com.svg" alt="WeChat">
-            </a>
+            <img src="assets/icon/wechat-svgrepo-com.svg" alt="WeChat Icon" class="wechat-icon" id="wechat-icon" target="_blank">
+
+            <!-- 弹出框 -->
+            <div id="wechat-popup">
+                <img src="assets/image/wechat.jpg" alt="WeChat QR Code">
+                <button class="close-btn" id="close-btn">Close</button>
+            </div>
+
+            <script>
+                // 获取元素
+                const wechatIcon = document.getElementById('wechat-icon');
+                const wechatPopup = document.getElementById('wechat-popup');
+                const closeBtn = document.getElementById('close-btn');
+
+                // 点击微信图标显示弹出框
+                wechatIcon.addEventListener('click', () => {
+                    wechatPopup.style.display = 'block';
+                });
+
+                // 点击关闭按钮隐藏弹出框
+                closeBtn.addEventListener('click', () => {
+                    wechatPopup.style.display = 'none';
+                });
+            </script>
             <a href="https://huggingface.co/lili24" target="_blank">
                 <img src="assets/icon/huggingface-color.svg" alt="Huggingface">
             </a>
