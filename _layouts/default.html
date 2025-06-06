@@ -58,10 +58,22 @@
         }
 
         .contact-icons img {
-            width: 30px; /* 图标大小 */
+            width: 30px; /* 默认图标大小 */
             height: 30px;
+            vertical-align: middle; /* 确保图标在同一水平线上 */
         }
 
+        .contact-icons .douyin-icon {
+            width: 30px; /* Douyin 图标放大 */
+            height: 30px;
+            vertical-align: middle; /* 确保图标在同一水平线上 */
+        }
+
+        .contact-icons .bilibili-icon {
+            width: 30px; /* Bilibili 图标放大 */
+            height: 30px;
+            vertical-align: middle; /* 确保图标在同一水平线上 */
+        }
         section {
             max-width: 800px;
             margin: 20px auto;
@@ -185,7 +197,7 @@
             cursor: pointer;
         }
 
-        #qq-popup .close-btn:hover {
+        #wechat-popup .close-btn:hover {
             background: #d32f2f;
         }
         #qq-popup {
@@ -219,6 +231,37 @@
         #qq-popup .close-btn:hover {
             background: #d32f2f;
         }
+        #douyin-popup {
+            display: none; /* 初始隐藏 */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+        }
+
+        #douyin-popup img {
+            width: 200px; /* 图片宽度 */
+            height: auto; /* 保持图片比例 */
+        }
+
+        #douyin-popup .close-btn {
+            display: block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #douyin-popup .close-btn:hover {
+            background: #d32f2f;
+        }
     </style>
 </head>
 <body>
@@ -242,7 +285,7 @@
             <a href="https://www.linkedin.com/in/jinke-li-6500522b7/" target="_blank">
                 <img src="assets/icon/linkedin-svgrepo-com.svg" alt="Linkedin">
             </a>
-            <img src="assets/icon/icons8-qq.svg" alt="QQ Icon" class="qq-icon" id="qq-icon" target="_blank">
+            <img src="assets/icon/icons8-qq.svg" alt="QQ Icon" class="contact-icon" id="qq-icon" target="_blank">
 
             <!-- 弹出框 -->
             <div id="qq-popup">
@@ -267,7 +310,7 @@
                 });
             </script>
 
-            <img src="assets/icon/wechat-svgrepo-com.svg" alt="WeChat Icon" class="wechat-icon" id="wechat-icon" target="_blank">
+            <img src="assets/icon/wechat-svgrepo-com.svg" alt="WeChat Icon" class="contact-icon" id="wechat-icon" target="_blank">
 
             <!-- 弹出框 -->
             <div id="wechat-popup">
@@ -292,11 +335,40 @@
                 });
             </script>
             <a href="https://space.bilibili.com/497879276?spm_id_from=333.1007.0.0" target="_blank">
-                <img src="assets/icon/icons8-bilibili.svg" alt="Bilibili">
+                <img src="assets/icon/icons8-bilibili.svg" class="bilibili-icon" alt="Bilibili">
+            </a>
+
+            <img src="assets/icon/tiktok-logo.png" alt="douyin Icon" class="douyin-icon" id="douyin-icon" target="_blank">
+
+            <!-- 弹出框 -->
+            <div id="douyin-popup">
+                <img src="assets/image/douyin.jpg" alt="Douyin QR Code">
+                <button class="close-btn" id="close-btn2">Close</button>
+            </div>
+
+            <script>
+                // 获取元素
+                const douyinIcon = document.getElementById('douyin-icon');
+                const douyinPopup = document.getElementById('douyin-popup');
+                const closeBtn2 = document.getElementById('close-btn2');
+
+                // 点击微信图标显示弹出框
+                douyinIcon.addEventListener('click', () => {
+                    douyinPopup.style.display = 'block';
+                });
+
+                // 点击关闭按钮隐藏弹出框
+                closeBtn2.addEventListener('click', () => {
+                    douyinPopup.style.display = 'none';
+                });
+            </script>
+            <a href="https://www.xiaohongshu.com/user/profile/62bebd2e000000001b026687" target="_blank">
+                <img src="assets/icon/XiaohongshuLOGO.svg" class="contact-icon" alt="xiaohongshu">
             </a>
             <a href="assets/files/简历.pdf" target="_blank">
                 <img src="assets/icon/reshot-icon-resume-RK2HTZ6GUA.svg" alt="Resume">
             </a>
+
         </div>
     </header>
 
