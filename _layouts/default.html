@@ -72,9 +72,9 @@
         }
 
         .project-container {
-            display: flex; /* 使用 flexbox 布局 */
-            align-items: center; /* 垂直顶部对齐 */
-            gap: 20px; /* 左右内容之间的间距 */
+            display: flex;
+            flex-direction: column; /* 垂直布局 */
+            gap: 10px; /* 调整上下内容之间的间距 */
             margin: 20px 0;
             padding: 20px;
             background: #f9f9f9; /* 项目框背景颜色 */
@@ -82,17 +82,16 @@
             border-radius: 8px;
         }
 
+        .project-container .project-description h4 {
+            margin: 5px 0; /* 减少每行文字之间的间距 */
+        }
+
         .project-container img {
-            width: 500px; /* 项目图片宽度 */
-            max-height: 200px; /* 项目图片高度 */
+            width: 100%; /* 图片占满整个宽度 */
             object-fit: cover; /* 图片裁剪适应容器 */
-            border-radius: 1px; /* 图片圆角 */
+            border-radius: 8px; /* 图片圆角 */
+            margin-top: 5px; /* 减少图片上方的间距 */
         }
-
-        .project-container .project-description {
-            flex: 1; /* 让项目描述占据剩余空间 */
-        }
-
         footer {
             text-align: center;
             padding: 10px;
@@ -186,7 +185,38 @@
             cursor: pointer;
         }
 
-        #wechat-popup .close-btn:hover {
+        #qq-popup .close-btn:hover {
+            background: #d32f2f;
+        }
+        #qq-popup {
+            display: none; /* 初始隐藏 */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+        }
+
+        #qq-popup img {
+            width: 200px; /* 图片宽度 */
+            height: auto; /* 保持图片比例 */
+        }
+
+        #qq-popup .close-btn {
+            display: block;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #qq-popup .close-btn:hover {
             background: #d32f2f;
         }
     </style>
@@ -212,6 +242,31 @@
             <a href="https://www.linkedin.com/in/jinke-li-6500522b7/" target="_blank">
                 <img src="assets/icon/linkedin-svgrepo-com.svg" alt="Linkedin">
             </a>
+            <img src="assets/icon/icons8-qq.svg" alt="QQ Icon" class="qq-icon" id="qq-icon" target="_blank">
+
+            <!-- 弹出框 -->
+            <div id="qq-popup">
+                <img src="assets/image/qq.jpg" alt="QQ QR Code">
+                <button class="close-btn" id="close-btn1">Close</button>
+            </div>
+
+            <script>
+                // 获取元素
+                const qqIcon = document.getElementById('qq-icon');
+                const qqPopup = document.getElementById('qq-popup');
+                const closeBtn1 = document.getElementById('close-btn1');
+
+                // 点击微信图标显示弹出框
+                qqIcon.addEventListener('click', () => {
+                    qqPopup.style.display = 'block';
+                });
+
+                // 点击关闭按钮隐藏弹出框
+                closeBtn1.addEventListener('click', () => {
+                    qqPopup.style.display = 'none';
+                });
+            </script>
+
             <img src="assets/icon/wechat-svgrepo-com.svg" alt="WeChat Icon" class="wechat-icon" id="wechat-icon" target="_blank">
 
             <!-- 弹出框 -->
@@ -260,19 +315,20 @@
         <h2>Projects</h2>
         <!-- 项目 1 -->
         <div class="project-container">
-            <img src="assets/image/mm.png" alt="Project 1">
             <div class="project-description">
                 <h4>UniSVG: A Unified Dataset for Vector Graphic Understanding and Generation with Multimodal Large Language Models</h3>
                 <p>Project Link: <a href="https://ryanlijinke.github.io/" target="_blank">Visit Project</a></p>
             </div>
+            <img src="assets/image/mm.png" alt="Project 1">
+
         </div>
         <!-- 项目 2 -->
         <div class="project-container">
-            <img src="assets/image/ICIC.png" alt="Project 2">
             <div class="project-description">
                 <h4>Two-Stage Multi-Stained Cell Analysis with the Segment Anything Model for Pathological Image Segmentation</h4>
-                <h4><a href="http://www.ic-icc.cn/2025/index.php" target="_blank">2025 Oral (CCF-C)!</a></h4>
+                <p><a href="http://www.ic-icc.cn/2025/index.php" target="_blank">2025 Oral (CCF-C)!</a></p>
             </div>
+            <img src="assets/image/ICIC.png" alt="Project 2">
         </div>
     </section>
 
