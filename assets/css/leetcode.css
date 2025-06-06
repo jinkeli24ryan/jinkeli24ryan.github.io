@@ -1,0 +1,104 @@
+/* 引入 Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@400;700&display=swap');
+
+/* 全局样式 */
+body {
+    font-family: 'Roboto', sans-serif; /* 使用现代字体 */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* 标题样式 */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #007BFF; /* 柔和的蓝色 */
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    font-family: 'Lora', serif; /* 使用优雅的字体 */
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1.2em;
+}
+
+/* 导航栏样式 */
+nav {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 主内容样式 */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    border-bottom: 2px solid #007BFF; /* 柔和的蓝色 */
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    color: #007BFF;
+    font-family: 'Lora', serif;
+}
+
+.question {
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.question h3 {
+    margin: 0;
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+}
+
+.question p {
+    margin: 5px 0;
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
