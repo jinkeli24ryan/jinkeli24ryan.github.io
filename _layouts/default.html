@@ -102,6 +102,12 @@
             bottom: 0;
             width: 100%;
         }
+        .responsibility-list {
+            padding-left: 0; /* 移除缩进 */
+            margin-top: 5px; /* 减少与上方的间距 */
+            font-size: 0.9em; /* 调整字体大小 */
+            list-style-position: inside; /* 可选，确保列表符号与文本对齐 */
+        }
         #work-experiences {
             max-width: 800px;
             margin: 20px auto;
@@ -239,7 +245,7 @@
         <img src="assets/image/self.jpg" alt="My Photo">
         <!-- 右侧描述 -->
         <div class="description">
-            <p>Hello! My name is Jinke Li (李金珂/Ryan Li). I'm a second year Master student majored in Artificial Intelligence at <a href="https://github.com/rvclab/rvclab.github.io" target="_blank">RVCLab</a> of Zhejiang University. My professor is <a href="https://person.zju.edu.cn/ylj" target="_blank">Liangjing Yang</a> from Singapore. I'm a GYM addicted ENTJ guy with interests of different cultures of the world! In relationship with a Thai Girl RN, and we have our <a href="secret/roger.html">small world</a>. Feel free to contact me and be a friend of mine!</p>
+            <p>Hello! My name is Jinke Li (李金珂/Ryan Li), a second-year Master's student specializing in Artificial Intelligence at the <a href="https://github.com/rvclab/rvclab.github.io" target="_blank">RVCLab</a> of Zhejiang University. I am fortunate to be mentored by Professor <a href="https://person.zju.edu.cn/ylj" target="_blank">Liangjing Yang</a>, who hails from Singapore. Beyond academics, I am passionate about fitness and exploring diverse cultures around the globe. Currently, I am in a relationship with a wonderful Thai partner, and together we cherish our <a href="secret/roger.html">special world</a>. If you'd like to connect or collaborate, feel free to reach out—I always welcome new friendships!</p>
         </div>
     </section>
 
@@ -258,7 +264,8 @@
         <div class="project-container">
             <img src="assets/image/ICIC.png" alt="Project 2">
             <div class="project-description">
-                <h4>Two-Stage Multi-Stained Cell Analysis with the Segment Anything Model for Pathological Image Segmentation (ICIC 2025 (CCF-C) Oral! )</h4>
+                <h4>Two-Stage Multi-Stained Cell Analysis with the Segment Anything Model for Pathological Image Segmentation</h4>
+                <h4><a href="http://www.ic-icc.cn/2025/index.php" target="_blank">2025 Oral (CCF-C)!</a></h4>
             </div>
         </div>
     </section>
@@ -272,7 +279,12 @@
                 <h3>AI Techinology Strategy Intern</h3>
                 <p><strong>Company:</strong>Rednote</p>
                 <p><strong>Time:</strong> May 2025 - Now</p>
-                <p><strong>Responsibilities:</strong> Developed and optimized web applications using React and Node.js. Collaborated with cross-functional teams to deliver high-quality software solutions.</p>
+                <p><strong>Responsibilities:</strong></p>
+                <ul class="responsibility-list">
+                    <li>Conduct research and analysis on emerging AI technologies to support strategic decision-making.</li>
+                    <li>Collaborate with cross-functional teams to design and implement AI-driven solutions.</li>
+                    <li>Prepare detailed reports and presentations on AI trends and their potential impact on business operations.</li>
+                </ul>
             </div>
         </div>
 
@@ -283,7 +295,13 @@
                 <h3>LLM Application Research Intern</h3>
                 <p><strong>Company:</strong>Tencent</p>
                 <p><strong>Time:</strong> June 2024 - June 2025</p>
-                <p><strong>Responsibilities:</strong> Conducted research on deep learning models for natural language processing. Published papers and contributed to open-source AI projects.</p>
+                <p><strong>Responsibilities:</strong></p>
+                <ul class="responsibility-list">
+                    <li>Multimodal Large Model Application Research: Conducted research on the application of multimodal large language models for converting scalar graphs/text into SVG vector graphics, covering areas such as vector graphic generation, understanding, and Q&A.</li>
+                    <li>Dataset Construction and Model Finetuning: Built the first comprehensive dataset for vector graphic-related tasks to train multimodal large models. Fine-tuned multiple mainstream models (e.g., LLaVA 1.5, Qwen 2.5 VL) based on this dataset, achieving performance surpassing SOTA (GPT-4V, Gemini Pro) on SVG-related tasks.</li>
+                    <li>Academic Contribution: Drafted a research paper based on the findings and submitted it to <strong>ACM MM 2025</strong>, currently under review. <a href="https://ryanlijinke.github.io/" target="_blank">Project Website</a></li>
+                    <li>AI Design Analysis Feature Development: Participated in the product planning and design of AI design analysis features and ideation tools in Tencent's design editor, collaborating with visual designers and front-end engineers to define product functionality and drive implementation.</li>
+                </ul>
             </div>
         </div>
 
@@ -294,7 +312,12 @@
                 <h3>Artificial Intelligence and Smart Healthcare Researcher Intern</h3>
                 <p><strong>Company:</strong>Shanghai Artificial Intelligence Laboratory</p>
                 <p><strong>Time:</strong> July 2023- September 2023</p>
-                <p><strong>Responsibilities:</strong> Analyzed large datasets to identify trends and insights. Created dashboards and reports to support business decision-making.</p>
+                <p><strong>Responsibilities:</strong></p>
+                <ul class="responsibility-list">
+                    <li>Medical Image Processing Research: Conducted analysis and research on popular medical image processing models, including U-Net, Deeplab, and Segment Anything Model, focusing on image segmentation and processing.</li>
+                    <li>Dataset Collection and Model Development: Collected and processed over 10 pathological datasets, comprising 28,000 images across more than 5 modalities, and developed a foundational model for Two-Stage Multi-Stained Cell Analysis.</li>
+                    <li>Academic Achievement: Published research findings as an oral presentation at <strong>ICIC 2025 (CCF-C).</strong></li>
+                </ul>
             </div>
         </div>
         <div class="experience-container">
@@ -303,7 +326,11 @@
                 <h3>Electrical Engineer Intern</h3>
                 <p><strong>Company:</strong>Zhejiang Svac Optoelectronics Technology Co., Ltd.</p>
                 <p><strong>Time:</strong> June 2022- July 2022</p>
-                <p><strong>Responsibilities:</strong> Analyzed large datasets to identify trends and insights. Created dashboards and reports to support business decision-making.</p>
+                <p><strong>Responsibilities:</strong></p>
+                <ul class="responsibility-list">
+                    <li>Design of Detection Device: As an electrical engineer, utilized AutoCAD to design the detection device for the company's latest generation of vacuum coating machines.</li>
+                    <li>Implementation: Successfully deployed the designed detection device, which is now in operational use.</li>
+                </ul>
             </div>
         </div>
     </section>
