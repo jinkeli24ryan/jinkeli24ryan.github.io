@@ -8,40 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Han+Serif:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- 左侧日历 -->
-    <div class="left-panel">
-        <h1>LeetCode</h1>
-
-        <!-- 月份选择器 -->
-        <div class="month-selector">
-            <select id="monthSelect">
-                <option value="0">January</option>
-                <option value="1">February</option>
-                <option value="2">March</option>
-                <option value="3">April</option>
-                <option value="4">May</option>
-                <option value="5">June</option>
-                <option value="6">July</option>
-                <option value="7">August</option>
-                <option value="8">September</option>
-                <option value="9">October</option>
-                <option value="10">November</option>
-                <option value="11">December</option>
-            </select>
-        </div>
-
-        <!-- 日历容器 -->
-        <div class="calendar-container">
-            <!-- 动态生成的月份日历将显示在这里 -->
-        </div>
-
-        <!-- 总题目统计 -->
-        <div class="total-count">
-            <h3>本月完成题目总数: <span id="totalCount">0</span></h3>
-        </div>
-    </div>
-
-    <!-- 导航栏 -->
 
 
     <!-- 右侧题目记录 -->
@@ -129,93 +95,6 @@
         </section>
     </div>
 
-    <script>
-        const calendarContainer = document.querySelector('.calendar-container');
-        const monthSelect = document.getElementById('monthSelect');
-        const totalCountElement = document.getElementById('totalCount');
-        const months = [
-            'January', 'February', 'March', 'April', 'May', 'June',
-            'July', 'August', 'September', 'October', 'November', 'December'
-        ];
-        const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; // 每个月的天数
-        const maxCount = 4; // 最大题目数量，用于颜色分级
 
-        // 初始化：默认显示第一个月份
-        generateCalendar(0);
-
-        // 监听月份选择器的变化
-        monthSelect.addEventListener('change', (event) => {
-            const selectedMonth = parseInt(event.target.value);
-            generateCalendar(selectedMonth);
-        });
-
-        // 动态生成日历
-        function generateCalendar(monthIndex) {
-            // 清空之前的日历
-            calendarContainer.innerHTML = '';
-
-            // 创建月份容器
-            const monthDiv = document.createElement('div');
-            monthDiv.classList.add('month');
-
-            const monthTitle = document.createElement('h3');
-            monthTitle.textContent = months[monthIndex];
-            monthDiv.appendChild(monthTitle);
-
-            const daysGrid = document.createElement('div');
-            daysGrid.classList.add('days-grid');
-
-            let totalCount = 0; // 初始化总题目数
-
-            // 生成日期
-            for (let day = 1; day <= daysInMonth[monthIndex]; day++) {
-                const dayElement = document.createElement('div');
-                dayElement.classList.add('day');
-                dayElement.textContent = day; // 显示日期
-                dayElement.dataset.count = 0; // 初始题目数量为 0
-
-                // 点击事件：记录当天完成的题目数量
-                dayElement.addEventListener('click', () => {
-                    const count = prompt(`请输入 ${months[monthIndex]} ${day} 完成的题目数量 (0-${maxCount}):`, dayElement.dataset.count);
-                    if (count !== null && !isNaN(count) && count >= 0 && count <= maxCount) {
-                        dayElement.dataset.count = count; // 更新题目数量
-                        dayElement.style.backgroundColor = getColorByCount(count);
-
-                        // 更新总题目数
-                        updateTotalCount(daysGrid);
-                    }
-                });
-
-                daysGrid.appendChild(dayElement);
-            }
-
-            monthDiv.appendChild(daysGrid);
-            calendarContainer.appendChild(monthDiv);
-
-            // 更新总题目数
-            updateTotalCount(daysGrid);
-        }
-
-        // 根据题目数量返回对应颜色
-        function getColorByCount(count) {
-            switch (parseInt(count)) {
-                case 1: return '#1e6823'; // 浅绿色
-                case 2: return '#44a340'; // 中绿色
-                case 3: return '#8cc665'; // 深绿色
-                case 4: return '#d6e685'; // 最深绿色
-                default: return '#181818'; // 默认颜色
-            }
-        }
-
-        // 更新总题目数
-        function updateTotalCount(daysGrid) {
-            let totalCount = 0;
-            const dayElements = daysGrid.querySelectorAll('.day');
-            dayElements.forEach(day => {
-                totalCount += parseInt(day.dataset.count) || 0;
-            });
-            totalCountElement.textContent = totalCount; // 更新统计显示
-        }
-    </script>
 </body>
 </html>

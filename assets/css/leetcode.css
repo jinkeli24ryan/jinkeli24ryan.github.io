@@ -108,7 +108,7 @@ select {
 
 /* 右侧题目记录样式 */
 .right-panel {
-    width: 60%; /* 右侧占 60% */
+    width: 80%; /* 右侧占 60% */
     padding: 20px;
     background-color: #fdf6e3; /* 温暖的浅米色背景 */
     overflow-y: auto; /* 如果内容过多，允许滚动 */
