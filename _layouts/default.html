@@ -203,20 +203,22 @@
             50% { box-shadow: 0 0 16px rgba(217, 119, 6, 0.9); }
         }
 
-        /* 工作经历 */
+        /* Work Experiences */
         #work-experiences {
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
             background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 12px;
         }
 
         #work-experiences h2 {
             text-align: center;
-            margin-bottom: 20px;
-            color: #333;
+            margin-bottom: 25px;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #1f2937;
         }
 
         .experience-container {
@@ -224,17 +226,26 @@
             align-items: flex-start;
             gap: 20px;
             margin-bottom: 20px;
-            padding: 10px;
-            background: #f9f9f9;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            padding: 20px;
+            background: #f9fafb;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .experience-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
         }
 
         .experience-container img {
-            width: 60px;
-            height: 60px;
+            width: 64px;
+            height: 64px;
             object-fit: contain;
             border-radius: 8px;
+            background: white;
+            padding: 6px; /* 给 logo 一点留白 */
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
         }
 
         .experience-details {
@@ -242,25 +253,33 @@
         }
 
         .experience-details h3 {
-            margin: 0;
-            color: #333;
+            margin: 0 0 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #111;
         }
 
         .experience-details p {
-            margin: 5px 0;
-            color: #555;
+            margin: 3px 0;
+            font-size: 0.95rem;
+            color: #444;
         }
 
         .experience-details p strong {
-            color: #333;
+            color: #111;
         }
 
         /* 列表 */
         .responsibility-list {
-            padding-left: 0;
-            margin-top: 5px;
-            font-size: 0.9em;
-            list-style-position: inside;
+            margin-top: 6px;
+            padding-left: 18px;   /* 缩进一点更整齐 */
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .responsibility-list li {
+            margin-bottom: 4px;
         }
 
         /* Footer */
