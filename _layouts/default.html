@@ -23,6 +23,15 @@
             color: #333;
             border-bottom: 1px solid #ddd;
         }
+        .main-title {
+            font-family: "Poppins", "Segoe UI", Arial, sans-serif; /* 简洁现代字体 */
+            font-size: 2.2rem;   /* 比默认稍大 */
+            font-weight: 600;    /* 半粗，避免太厚重 */
+            text-align: center;  /* 居中 */
+            margin: 20px 0;      /* 上下间距 */
+            color: #1f2937;      /* 深灰，比纯黑柔和 */
+            letter-spacing: 0.5px; /* 稍微加点字间距，更清爽 */
+        }
 
         /* About 部分 */
         .about-container {
@@ -35,6 +44,7 @@
             background: #ffffff;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             border-radius: 12px;
+            font-family: "Poppins", "Segoe UI", Arial, sans-serif; /* 修改字体 */
         }
 
         /* 头像 */
@@ -43,7 +53,7 @@
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid #2563eb; /* 蓝色描边 */
+            border: 3px solid #7296e2; /* 蓝色描边 */
             box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
 
@@ -55,12 +65,12 @@
             color: #444;
             background: #f9fafb;
             padding: 15px 20px;
-            border-left: 4px solid #2563eb; /* 蓝色竖条 */
+            border-left: 4px solid #7296e2; /* 蓝色竖条 */
             border-radius: 6px;
         }
 
         .about-container .description a {
-            color: #2563eb;
+            color: #7296e2;
             font-weight: 600;
             text-decoration: none;
         }
@@ -335,7 +345,7 @@
 <body>
     <!-- 头部 -->
     <header>
-        <h1>Jinke Li (李金珂/Ryan Li)</h1>
+        <h1 class="main-title">Jinke Li (李金珂 / Ryan Li)</h1>
         <!-- 联系方式 -->
         <div class="contact-icons">
             <a href="mailto:ryanli24@outlook.com" target="_blank">
