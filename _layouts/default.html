@@ -276,30 +276,39 @@
         #douyin-popup .close-btn:hover {
             background: #d32f2f;
         }
-        /* 按钮样式 */
+        /* 通用按钮样式 */
         .btn-link {
         display: inline-block;
         padding: 8px 16px;
         border-radius: 6px;
-        background: #2563eb;
-        color: #fff;
-        font-weight: 500;
+        font-weight: 600;
         text-decoration: none;
-        transition: background 0.2s ease, transform 0.2s ease;
+        transition: all 0.25s ease;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
 
-        .btn-link:hover {
-        background: #1e40af;
+        /* 主按钮 (Project) */
+        .btn-link.primary {
+        background: #1d4ed8; /* 深蓝 */
+        color: #fff;
+        }
+
+        .btn-link.primary:hover {
+        background: #0f2f8a;
         transform: translateY(-2px);
         }
 
-        .btn-link.secondary {
-        background: #f59e0b;
+        /* 强调按钮 (Conference) */
+        .btn-link.danger {
+        background: #dc2626; /* 红/橙 */
+        color: #fff;
         }
 
-        .btn-link.secondary:hover {
-        background: #b45309;
+        .btn-link.danger:hover {
+        background: #991b1b;
+        transform: translateY(-2px);
         }
+
 
     </style>
 </head>
