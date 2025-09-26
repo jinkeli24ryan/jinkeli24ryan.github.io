@@ -6,7 +6,7 @@
     <meta name="description" content="个人主页">
     <title>个人主页</title>
     <style>
-        /* 样式部分 */
+        /* 基础样式 */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -15,18 +15,20 @@
             color: #333;
         }
 
+        /* 顶部 */
         header {
             text-align: center;
             padding: 20px;
-            background-color: #e6f7ff; /* 使用浅蓝色背景 */
+            background-color: #e6f7ff; /* 浅蓝色背景 */
             color: #333;
-            border-bottom: 1px solid #ddd; /* 添加底部边框 */
+            border-bottom: 1px solid #ddd;
         }
 
+        /* About 部分 */
         .about-container {
-            display: flex; /* 使用 flexbox 布局 */
-            align-items: flex-start; /* 垂直顶部对齐 */
-            gap: 20px; /* 左右内容之间的间距 */
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
@@ -36,20 +38,21 @@
         }
 
         .about-container img {
-            width: 150px; /* 图片宽度 */
-            height: 150px; /* 图片高度 */
-            border-radius: 50%; /* 圆形图片 */
-            object-fit: cover; /* 图片裁剪适应容器 */
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         .about-container .description {
-            flex: 1; /* 让简介占据剩余空间 */
+            flex: 1;
         }
 
+        /* 联系图标 */
         .contact-icons {
             display: flex;
             justify-content: center;
-            gap: 15px; /* 图标之间的间距 */
+            gap: 15px;
             margin-top: 10px;
         }
 
@@ -57,23 +60,15 @@
             text-decoration: none;
         }
 
-        .contact-icons img {
-            width: 30px; /* 默认图标大小 */
-            height: 30px;
-            vertical-align: middle; /* 确保图标在同一水平线上 */
-        }
-
-        .contact-icons .douyin-icon {
-            width: 30px; /* Douyin 图标放大 */
-            height: 30px;
-            vertical-align: middle; /* 确保图标在同一水平线上 */
-        }
-
+        .contact-icons img,
+        .contact-icons .douyin-icon,
         .contact-icons .bilibili-icon {
-            width: 30px; /* Bilibili 图标放大 */
+            width: 30px;
             height: 30px;
-            vertical-align: middle; /* 确保图标在同一水平线上 */
+            vertical-align: middle;
         }
+
+        /* Section 通用 */
         section {
             max-width: 800px;
             margin: 20px auto;
@@ -83,42 +78,94 @@
             border-radius: 8px;
         }
 
+        /* Projects 部分 */
+        #projects h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
         .project-container {
             display: flex;
-            flex-direction: column; /* 垂直布局 */
-            gap: 10px; /* 调整上下内容之间的间距 */
+            flex-direction: column;
+            gap: 10px;
             margin: 20px 0;
             padding: 20px;
-            background: #f9f9f9; /* 项目框背景颜色 */
+            background: #f9f9f9;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            border-radius: 12px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .project-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.12);
         }
 
         .project-container .project-description h4 {
-            margin: 5px 0; /* 减少每行文字之间的间距 */
+            margin: 5px 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #111;
         }
 
         .project-container img {
-            width: 100%; /* 图片占满整个宽度 */
-            object-fit: cover; /* 图片裁剪适应容器 */
-            border-radius: 8px; /* 图片圆角 */
-            margin-top: 5px; /* 减少图片上方的间距 */
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #e6f7ff; /* 使用浅蓝色背景 */
-            color: #333;
-            position: fixed;
-            bottom: 0;
             width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 5px;
         }
-        .responsibility-list {
-            padding-left: 0; /* 移除缩进 */
-            margin-top: 5px; /* 减少与上方的间距 */
-            font-size: 0.9em; /* 调整字体大小 */
-            list-style-position: inside; /* 可选，确保列表符号与文本对齐 */
+
+        .project-description p {
+            margin: 8px 0 0;
+            font-size: 0.95rem;
         }
+
+        .project-description a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .project-description a:hover {
+            text-decoration: underline;
+        }
+
+        /* 奖项徽章 */
+        .badge {
+            display: inline-block;
+            margin: 8px 0;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: white;
+            letter-spacing: 0.3px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+        .badge.success {
+            background: linear-gradient(90deg, #16a34a, #22c55e);
+            animation: pulse-green 2s infinite;
+        }
+
+        .badge.warning {
+            background: linear-gradient(90deg, #d97706, #f59e0b);
+            animation: pulse-orange 2s infinite;
+        }
+
+        /* 徽章动画 */
+        @keyframes pulse-green {
+            0%, 100% { box-shadow: 0 0 8px rgba(22, 163, 74, 0.6); }
+            50% { box-shadow: 0 0 16px rgba(22, 163, 74, 0.9); }
+        }
+
+        @keyframes pulse-orange {
+            0%, 100% { box-shadow: 0 0 8px rgba(217, 119, 6, 0.6); }
+            50% { box-shadow: 0 0 16px rgba(217, 119, 6, 0.9); }
+        }
+
+        /* 工作经历 */
         #work-experiences {
             max-width: 800px;
             margin: 20px auto;
@@ -135,25 +182,25 @@
         }
 
         .experience-container {
-            display: flex; /* 使用 flexbox 布局 */
-            align-items: flex-start; /* 垂直顶部对齐 */
-            gap: 20px; /* 左右内容之间的间距 */
-            margin-bottom: 20px; /* 每个工作经历之间的间距 */
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 20px;
             padding: 10px;
-            background: #f9f9f9; /* 背景颜色 */
+            background: #f9f9f9;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
 
         .experience-container img {
-            width: 60px; /* 公司 logo 宽度 */
-            height: 60px; /* 公司 logo 高度 */
-            object-fit: contain; /* 保持 logo 比例 */
-            border-radius: 8px; /* logo 圆角 */
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            border-radius: 8px;
         }
 
         .experience-details {
-            flex: 1; /* 让详情占据剩余空间 */
+            flex: 1;
         }
 
         .experience-details h3 {
@@ -169,70 +216,31 @@
         .experience-details p strong {
             color: #333;
         }
-        #wechat-popup {
-            display: none; /* 初始隐藏 */
+
+        /* 列表 */
+        .responsibility-list {
+            padding-left: 0;
+            margin-top: 5px;
+            font-size: 0.9em;
+            list-style-position: inside;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #e6f7ff;
+            color: #333;
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            border-radius: 8px;
+            bottom: 0;
+            width: 100%;
         }
 
-        #wechat-popup img {
-            width: 200px; /* 图片宽度 */
-            height: auto; /* 保持图片比例 */
-        }
-
-        #wechat-popup .close-btn {
-            display: block;
-            margin-top: 10px;
-            padding: 5px 10px;
-            background: #f44336;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #wechat-popup .close-btn:hover {
-            background: #d32f2f;
-        }
-        #qq-popup {
-            display: none; /* 初始隐藏 */
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            border-radius: 8px;
-        }
-
-        #qq-popup img {
-            width: 200px; /* 图片宽度 */
-            height: auto; /* 保持图片比例 */
-        }
-
-        #qq-popup .close-btn {
-            display: block;
-            margin-top: 10px;
-            padding: 5px 10px;
-            background: #f44336;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #qq-popup .close-btn:hover {
-            background: #d32f2f;
-        }
+        /* 弹窗统一样式 */
+        #wechat-popup,
+        #qq-popup,
         #douyin-popup {
-            display: none; /* 初始隐藏 */
+            display: none;
             position: fixed;
             top: 50%;
             left: 50%;
@@ -243,11 +251,15 @@
             border-radius: 8px;
         }
 
+        #wechat-popup img,
+        #qq-popup img,
         #douyin-popup img {
-            width: 200px; /* 图片宽度 */
-            height: auto; /* 保持图片比例 */
+            width: 200px;
+            height: auto;
         }
 
+        #wechat-popup .close-btn,
+        #qq-popup .close-btn,
         #douyin-popup .close-btn {
             display: block;
             margin-top: 10px;
@@ -259,9 +271,12 @@
             cursor: pointer;
         }
 
+        #wechat-popup .close-btn:hover,
+        #qq-popup .close-btn:hover,
         #douyin-popup .close-btn:hover {
             background: #d32f2f;
         }
+
     </style>
 </head>
 <body>
@@ -378,30 +393,45 @@
         <img src="assets/image/self.jpg" alt="My Photo">
         <!-- 右侧描述 -->
         <div class="description">
-            <p>Hello! My name is Jinke Li (李金珂/Ryan Li), a second-year Master's student specializing in Artificial Intelligence at the <a href="https://github.com/rvclab/rvclab.github.io" target="_blank">RVCLab</a> of Zhejiang University. I am fortunate to be mentored by Professor <a href="https://person.zju.edu.cn/ylj" target="_blank">Liangjing Yang</a>, who hails from Singapore. Beyond academics, I am passionate about fitness and exploring diverse cultures around the globe. If you'd like to connect or collaborate, feel free to reach out—I always welcome new friendships! Here is the entry of our <a href="secret\roger.html" target="_blank">magic world</a> !!!</p>
+            <p>Hello! My name is Jinke Li (李金珂/Ryan Li), a second-year Master's student specializing in Artificial Intelligence at the <a href="https://github.com/rvclab/rvclab.github.io" target="_blank">RVCLab</a> of Zhejiang University. I am fortunate to be mentored by Professor <a href="https://person.zju.edu.cn/ylj" target="_blank">Liangjing Yang</a>, who hails from Singapore. Beyond academics, I am passionate about fitness and exploring diverse cultures around the globe. If you'd like to connect or collaborate, feel free to reach out—I always welcome new friendships!</p>
         </div>
     </section>
 
-    <!-- 项目部分 -->
+        <!-- 项目部分 -->
     <section id="projects">
-        <h2>Projects</h2>
-        <!-- 项目 1 -->
-        <div class="project-container">
-            <div class="project-description">
-                <h4>UniSVG: A Unified Dataset for Vector Graphic Understanding and Generation with Multimodal Large Language Models</h3>
-                <p>Project Link: <a href="https://ryanlijinke.github.io/" target="_blank">Visit Project</a></p>
-            </div>
-            <img src="assets/image/mm.png" alt="Project 1">
+    <h2>Projects</h2>
 
+    <!-- 项目 1 -->
+    <div class="project-container">
+        <img src="assets/image/mm.png" alt="Project 1">
+        <div class="project-description">
+        <h4>
+            UniSVG: A Unified Dataset for Vector Graphic Understanding and Generation with Multimodal Large Language Models
+        </h4>
+        <div class="badge success">
+            🏆 <span>ACM MM 2025 Dataset Track Accepted!</span> 🏆
         </div>
-        <!-- 项目 2 -->
-        <div class="project-container">
-            <div class="project-description">
-                <h4>Two-Stage Multi-Stained Cell Analysis with the Segment Anything Model for Pathological Image Segmentation</h4>
-                <p><a href="http://www.ic-icc.cn/2025/index.php" target="_blank">2025 Oral (CCF-C)!</a></p>
-            </div>
-            <img src="assets/image/ICIC.png" alt="Project 2">
+        <p>
+            Project Link: <a href="https://ryanlijinke.github.io/" target="_blank">Visit Project</a>
+        </p>
         </div>
+    </div>
+
+    <!-- 项目 2 -->
+    <div class="project-container">
+        <img src="assets/image/ICIC.png" alt="Project 2">
+        <div class="project-description">
+        <h4>
+            Two-Stage Multi-Stained Cell Analysis with the Segment Anything Model for Pathological Image Segmentation
+        </h4>
+        <div class="badge warning">
+            🎤 <span>ICIC 2025 Oral (CCF-C)</span>
+        </div>
+        <p>
+            <a href="http://www.ic-icc.cn/2025/index.php" target="_blank">Visit Conference</a>
+        </p>
+        </div>
+    </div>
     </section>
 
     <section id="work-experiences">
