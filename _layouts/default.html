@@ -276,38 +276,30 @@
         #douyin-popup .close-btn:hover {
             background: #d32f2f;
         }
-        /* 通用按钮样式 */
+        .link-group {
+        display: flex;           /* 横向排列 */
+        flex-wrap: wrap;         /* 一行放不下自动换行 */
+        gap: 10px;               /* 按钮间距 */
+        margin-top: 10px;
+        }
+
         .btn-link {
         display: inline-block;
-        padding: 8px 16px;
+        padding: 8px 14px;
         border-radius: 6px;
         font-weight: 600;
         text-decoration: none;
         transition: all 0.25s ease;
         box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        background: #2563eb;
+        color: white;
         }
 
-        /* 主按钮 (Project) */
-        .btn-link.primary {
-        background: #1d4ed8; /* 深蓝 */
-        color: #fff;
-        }
-
-        .btn-link.primary:hover {
-        background: #0f2f8a;
+        .btn-link:hover {
+        background: #1e40af;
         transform: translateY(-2px);
         }
 
-        /* 强调按钮 (Conference) */
-        .btn-link.danger {
-        background: #dc2626; /* 红/橙 */
-        color: #fff;
-        }
-
-        .btn-link.danger:hover {
-        background: #991b1b;
-        transform: translateY(-2px);
-        }
 
 
     </style>
@@ -444,21 +436,13 @@
         <div class="badge success">
             🏆 <span>ACM MM 2025 (CCF-A) Dataset Track Accepted!</span> 🏆
         </div>
-        <p>
-        <a href="https://ryanlijinke.github.io/" target="_blank" class="btn-link">🔗 Visit Project</a>
-        </p>
-        <p>
-        <a href="https://acmmm2025.org/" target="_blank" class="btn-link">🏛️ Visit Conference</a>
-        </p>
-        <p>
-        <a href="https://huggingface.co/datasets/lili24/UniSVG" target="_blank" class="btn-link">📊 Visit Dataset</a>
-        </p>
-        <p>
-        <a href="https://github.com/Ryanlijinke/unisvg.github.io" target="_blank" class="btn-link">💻 Visit Code</a>
-        </p>
-        <p>
-        <a href="https://huggingface.co/Jaireyu/Qwen2.5-VL-UniSVG-finetuned" target="_blank" class="btn-link">🤖 Visit Model</a>
-        </p>
+        <div class="link-group">
+        <a href="https://ryanlijinke.github.io/" target="_blank" class="btn-link">🔗 Project</a>
+        <a href="https://acmmm2025.org/" target="_blank" class="btn-link">🏛️ Conference</a>
+        <a href="https://huggingface.co/datasets/lili24/UniSVG" target="_blank" class="btn-link">📊 Dataset</a>
+        <a href="https://github.com/Ryanlijinke/unisvg.github.io" target="_blank" class="btn-link">💻 Code</a>
+        <a href="https://huggingface.co/Jaireyu/Qwen2.5-VL-UniSVG-finetuned" target="_blank" class="btn-link">🤖 Model</a>
+        </div>
         </div>
     </div>
 
@@ -472,9 +456,10 @@
         <div class="badge success">
             🏆 <span>ICIC 2025 Oral (CCF-C)</span> 🏆
         </div>
-        <p>
-        <a href="http://www.ic-icc.cn/2025/index.php" target="_blank" class="btn-link secondary">🎤 Visit Conference</a>
-        </p>
+        <div class="link-group">
+        <a href="https://link.springer.com/chapter/10.1007/978-981-95-0033-8_21" target="_blank" class="btn-link">📄 Paper</a>
+        <a href="http://www.ic-icc.cn/2025/index.php" target="_blank" class="btn-link">🏛️ Conference</a>
+        </div>
         </div>
     </div>
     </section>
