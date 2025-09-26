@@ -32,40 +32,68 @@
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
-            background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
         }
 
+        /* 头像 */
         .about-container img {
             width: 150px;
             height: 150px;
             border-radius: 50%;
             object-fit: cover;
+            border: 3px solid #2563eb; /* 蓝色描边 */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
 
+        /* 简介 */
         .about-container .description {
             flex: 1;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #444;
+            background: #f9fafb;
+            padding: 15px 20px;
+            border-left: 4px solid #2563eb; /* 蓝色竖条 */
+            border-radius: 6px;
+        }
+
+        .about-container .description a {
+            color: #2563eb;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .about-container .description a:hover {
+            text-decoration: underline;
         }
 
         /* 联系图标 */
         .contact-icons {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-top: 10px;
+            gap: 18px;
+            margin-top: 15px;
         }
 
         .contact-icons a {
             text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
         .contact-icons img,
         .contact-icons .douyin-icon,
         .contact-icons .bilibili-icon {
-            width: 30px;
-            height: 30px;
+            width: 34px;
+            height: 34px;
             vertical-align: middle;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .contact-icons a:hover {
+            transform: scale(1.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
         /* Section 通用 */
